@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TranslateNow - Multilingual Translator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-3xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center text-blue-600 text-2xl">🌐</div>
+                <div>
+                    <h1 class="text-2xl font-semibold tracking-tight">TranslateNow</h1>
+                    <p class="text-blue-100 text-sm">Real-time multilingual translator</p>
+                </div>
+            </div>
+            <div class="text-xs bg-white/20 px-3 py-1 rounded-full font-medium">Powered by MyMemory API</div>
+        </div>
+
+        <div class="p-8">
+            <!-- Language Selectors -->
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="flex-1">
+                    <select id="source-lang" class="lang-select"></select>
+                </div>
+                <button id="swap-btn" class="swap-btn">↔</button>
+                <div class="flex-1">
+                    <select id="target-lang" class="lang-select"></select>
+                </div>
+            </div>
+
+            <!-- Translation Panels -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- INPUT -->
+                <div class="input-panel">
+                    <div class="panel-header">INPUT</div>
+                    <textarea id="input-text" maxlength="500" class="textarea" placeholder="Type or paste text here..."></textarea>
+                    <div class="panel-footer">
+                        <div class="flex gap-6">
+                            <button id="listen-input" class="icon-btn">🔊 Listen</button>
+                            <button id="copy-input" class="icon-btn">📋 Copy</button>
+                        </div>
+                        <span id="char-count" class="char-count">0/500</span>
+                    </div>
+                </div>
+
+                <!-- OUTPUT -->
+                <div class="output-panel">
+                    <div class="panel-header">OUTPUT</div>
+                    <textarea id="output-text" readonly class="textarea"></textarea>
+                    <div class="panel-footer">
+                        <div class="flex gap-6">
+                            <button id="listen-output" class="icon-btn">🔊 Listen</button>
+                            <button id="copy-output" class="icon-btn">📋 Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Translate Button -->
+            <div class="mt-8 flex justify-center">
+                <button id="translate-btn" class="translate-btn">
+                    <span id="btn-text">Translate</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            Max 500 characters • Free MyMemory API • Real-time with debounce
+        </div>
+    </div>
+
+    <script src="/Java.js"></script>
+</body>
+</html>
